@@ -1,0 +1,29 @@
+.library-div {
+  display:flex;
+  width:89%;
+  background: #F3F2EE;
+  height:100%;
+}
+
+.library-div-content {
+  display:block;
+}
+
+.library-div-header {
+  left: 5%;
+}
+
+.library-div-box {
+  background: #FFFFFF;
+  margin:0;
+  width:90%;
+  left:5%;
+  height:100%
+}
+
+.library-request-info-session {
+  width: 90%;
+  left: 5%;
+  height:40%;
+  top:5%;
+}

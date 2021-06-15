@@ -1,0 +1,44 @@
+.connect-div {
+  display:flex;
+  float:left;
+  width:89%;
+  background: #F3F2EE;
+  height:100%;
+}
+
+.connect-div-content {
+  display: block;
+}
+
+.connect-div-header {
+  left: 5%;
+}
+
+.connect-div-box {
+  background: #FFFFFF;
+  margin:0;
+  width:90%;
+  left:5%;
+  height:100%
+}
+
+.connect-request-info-session {
+  width: 90%;
+  left: 5%;
+  height:40%;
+  top:5%;
+}
+
+.connect-request-tracker {
+  width: 90%;
+  left: 5%;
+  height:40%;
+  top:5%;
+}
+
+.connect-div-container {
+  display:grid;
+  grid-template-columns:auto auto;
+  height:100%;
+  top:5%;
+}
