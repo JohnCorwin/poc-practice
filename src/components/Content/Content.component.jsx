@@ -10,6 +10,7 @@ import Criteria from '../Criteria/Criteria.component';
 import Connect from '../Connect/Connect.component';
 import Library from '../Library/Library.component';
 import Students from '../Students/Students.component';
+import Analytics from '../Analytics/Analytics.component';
 
 const Content = () => {
   return (
@@ -41,6 +42,9 @@ const Content = () => {
         </Route>
         <Route path="/students">
           <Students />
+        </Route>
+        <Route path="/analytics">
+          <Analytics />
         </Route>
       </Switch>
     </Router>
