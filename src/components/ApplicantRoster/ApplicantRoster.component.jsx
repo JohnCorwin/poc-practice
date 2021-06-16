@@ -112,12 +112,11 @@ const ApplicantRoster = () => {
       <div className="applicant-roster-box">
         <div className="applicant-roster-div">
           <div className="applicant-roster-top-buttons">
-            <button onClick={() => setTable('Applied')}className="applied-button">Applied</button>
-            <button onClick={() => setTable('Waitlisted')} className="wait-list-button">Wait List</button>
-            <button onClick={() => setTable('Admissable')} className="qualified-admissible-button">Qualified/Admissable</button>
+            <button onClick={() => setTable('Applied')}className="applied-button">Applied {dataApplied.length}</button>
+            <button onClick={() => setTable('Waitlisted')} className="wait-list-button">Wait List {dataWaitlisted.length}</button>
+            <button onClick={() => setTable('Admissable')} className="qualified-admissible-button">Qualified/Admissable {dataAdmissable.length}</button>
           </div>
           <DataTable
-            title="Applicant Roster"
             columns={columns}
             customStyles={customStyles}
             data={getData()}

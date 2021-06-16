@@ -1,0 +1,38 @@
+section.side-nav {
+	width: 150px;
+	min-height: calc(100vh - 60px);
+	background-color: #212e36;
+	color: #b2b2b2;
+	padding-top: 24px;
+	padding-left: 12px;
+
+	img {
+		margin-bottom: 24px;
+	}
+
+	h5 {
+		font-size: 11px;
+		text-transform: uppercase;
+		font-weight: 300;
+		margin-bottom: 12px;
+	}
+	ul {
+		margin-left: 12px;
+		margin-bottom: 24px;
+
+		li {
+			margin-bottom: 12px;
+
+			a {
+				font-size: 18px;
+				transition: color .3s;
+				cursor: pointer;
+				color: #b2b2b2;
+
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
+}

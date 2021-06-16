@@ -1,0 +1,19 @@
+main.connect {
+	.cards {
+		display: flex;
+		margin-top: 40px;
+
+		.card {
+			max-width: 66%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.card:last-child {
+			margin-left: 2%;
+			max-width: 30%;
+		}
+	}
+}

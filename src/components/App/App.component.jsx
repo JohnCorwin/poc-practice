@@ -1,12 +1,14 @@
 import './App.css';
-import Header from '../Header/Header.component';
+import TopNav from '../TopNav/TopNav.component';
+import Home from '../Home/Home.component';
 import Sidebar from '../Sidebar/Sidebar.component';
 import Content from '../Content/Content.component';
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
+      <TopNav />
+      <Home />
       <Sidebar />
       <Content />
     </div>
