@@ -1,11 +1,10 @@
 import React from "react";
-import EnrollmentFilters from "../Filters/EnrollmentFilters.component";
 
 const EnrollmentContent = () => {
   return (
     <div className="stuff">
       <h1>Enrollment Criteria</h1>
-      <p>Enrollment Critieria available for East China students during the Fall 2021 Hopkins Global Semester.</p>
+      <p>Enrollment Criteria available for East China students during the Fall 2021 Hopkins Global Semester.</p>
       <div className="cards">
         <div className="card">
         <h2>Enrollment Requirements</h2>

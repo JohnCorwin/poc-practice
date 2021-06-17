@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import Tableau from 'tableau-api';
 import './Analytics.css';
 
 const { tableau } = window;
 
 const Analytics = () => {
-  const [url, setUrl] = useState(
+  const [url] = useState(
     "https://public.tableau.com/views/RegionalSampleWorkbook/Storms"
   );
 
@@ -15,7 +14,7 @@ const Analytics = () => {
     new tableau.Viz(ref.current, url);
   };
 
-  useEffect(initViz, []);
+  useEffect(initViz, [url]);
 
   return (
     <div className="analytics-content">

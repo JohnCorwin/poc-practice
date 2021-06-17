@@ -9,9 +9,9 @@ import "../../css/components/navigation.scss";
 const TopNav = () => {
   return (
     <section className="top-nav">
-      <img src={logo}></img>
-      <img src={search}></img>
-      <img src={icons}></img>
+      <img src={logo} alt="logo"></img>
+      <img src={search} alt="search"></img>
+      <img src={icons} alt="icons"></img>
     </section>
   )
 }

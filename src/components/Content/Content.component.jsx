@@ -1,4 +1,3 @@
-import './Content.css';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -38,15 +37,6 @@ const Content = () => {
           <Route path="/library">
             <Library />
           </Route>
-          <Route path="/settings">
-            <Settings />
-          </Route>
-          <Route path="/notifications">
-            <Notifications />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
           <Route path="/students">
             <Students />
           </Route>
@@ -61,38 +51,6 @@ const Content = () => {
     </section>
   );
 
-}
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function Settings() {
-  return (
-    <div>
-      <h2>Settings</h2>
-    </div>
-  );
-}
-
-function Notifications() {
-  return (
-    <div>
-      <h2>Notifications</h2>
-    </div>
-  );
-}
-
-function Profile() {
-  return (
-    <div>
-      <h2>Profile</h2>
-    </div>
-  );
 }
 
 export default Content;

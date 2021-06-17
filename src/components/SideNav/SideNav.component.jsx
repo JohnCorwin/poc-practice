@@ -1,8 +1,6 @@
 import * as React from "react";
 
 import hopkinsLogo from "../../assets/images/hopkinslogo.svg";
-import search from "../../assets/images/search.svg";
-import icons from "../../assets/images/icons.svg";
 
 import "../../css/components/sidenav.scss";
 import "../../css/baseline/project.scss";
@@ -11,7 +9,7 @@ import "../../css/baseline/reset.scss";
 const SideNav = () => {
   return (
     <section className="side-nav">
-      <img src={hopkinsLogo}></img>
+      <img src={hopkinsLogo} alt="hopkinsLogo"></img>
       <h5>Recruitment</h5>
       <ul>
         <li><a href="/home">Campaigns</a></li>

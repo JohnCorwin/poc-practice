@@ -14,10 +14,10 @@ const Campaigns = () => {
           <h1>Campaigns</h1>
           <a className="button" href="/discover">Create New Campaign</a>
         </div>
-        <img src={campaigns}></img>
+        <img src={campaigns} alt="campaigns"></img>
       </div>
       <div className="card side">
-        <img src={tasks}></img>
+        <img src={tasks} alt="tasks"></img>
       </div>
     </>
   );

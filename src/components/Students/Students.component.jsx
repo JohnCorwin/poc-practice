@@ -1,5 +1,4 @@
 import React from "react";
-import ApplicantRoster from "../ApplicantRoster/ApplicantRoster.component";
 import StudentsFilters from "../Filters/StudentsFilters.component";
 import StudentsContent from "../StudentsContent/StudentsContent.component";
 

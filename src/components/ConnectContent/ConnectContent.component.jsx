@@ -10,10 +10,10 @@ const ConnectContent = () => {
       <p>Connections for Chinese students during the Fall 2021 Hopkins Global Semester.</p>
       <div className="cards">
         <div className="card">
-          <img src={connectChat}></img>
+          <img src={connectChat} alt="connectChat"></img>
         </div>
         <div className="card">
-          <img src={connectFeed}></img>
+          <img src={connectFeed} alt="connectFeed"></img>
         </div>
       </div>
     </div>

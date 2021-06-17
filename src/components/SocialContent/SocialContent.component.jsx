@@ -1,7 +1,3 @@
-import DiscoverFilters from '../Filters/DiscoverFilters.component';
-import Dots from '../Dots/Dots.component';
-import Maps from '../Maps/Maps.component';
-
 import socialFeed from "../../assets/images/socialfeed.svg";
 import socialProof from "../../assets/images/socialproof.svg";
 
@@ -13,10 +9,10 @@ const SocialContent = () => {
         <p>Currently running social content for all potential students in East China interested in Medicine.</p>
         <div className="cards">
           <div className="card">
-            <img src={socialFeed}></img>
+            <img src={socialFeed} alt="socialFeed"></img>
           </div>
           <div className="card">
-            <img src={socialProof}></img>
+            <img src={socialProof} alt="socialProof"></img>
           </div>
         </div>
       </div>
