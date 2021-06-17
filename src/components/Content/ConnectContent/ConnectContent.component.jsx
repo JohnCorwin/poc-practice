@@ -6,8 +6,8 @@ import connectFeed from "../../../assets/images/connectfeed.svg";
 const ConnectContent = () => {
   return (
     <div className="stuff">
-      <h1>Connect</h1>
-      <p>Connections for Chinese students during the Fall 2021 Hopkins Global Semester.</p>
+      <h1 className="page-title">Connect</h1>
+      <p className="page-subtitle">Connections for Chinese students during the Fall 2021 Hopkins Global Semester.</p>
       <div className="cards">
         <div className="card">
           <img src={connectChat} alt="connectChat"></img>

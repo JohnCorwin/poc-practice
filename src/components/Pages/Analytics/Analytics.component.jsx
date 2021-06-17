@@ -19,7 +19,7 @@ const Analytics = () => {
 
   return (
     <div className="analytics-content">
-      <h1>Example Tableau</h1>
+      <h1 className="page-title">Example Tableau</h1>
       <div style={setVizStyle} ref={ref} />
     </div>
   );

@@ -3,8 +3,8 @@ import React from "react";
 const EnrollmentContent = () => {
   return (
     <div className="stuff">
-      <h1>Enrollment Criteria</h1>
-      <p>Enrollment Criteria available for East China students during the Fall 2021 Hopkins Global Semester.</p>
+      <h1 className="page-title">Enrollment Criteria</h1>
+      <p className="page-subtitle">Enrollment Criteria available for East China students during the Fall 2021 Hopkins Global Semester.</p>
       <div className="cards">
         <div className="card">
         <h2>Enrollment Requirements</h2>

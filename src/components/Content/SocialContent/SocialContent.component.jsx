@@ -5,8 +5,8 @@ const SocialContent = () => {
   return (
     <>
       <div className="stuff">
-        <h1>Active Social Content</h1>
-        <p>Currently running social content for all potential students in East China interested in Medicine.</p>
+        <h1 className="page-title">Active Social Content</h1>
+        <p className="page-subtitle">Currently running social content for all potential students in East China interested in Medicine.</p>
         <div className="cards">
           <div className="card">
             <img src={socialFeed} alt="socialFeed"></img>

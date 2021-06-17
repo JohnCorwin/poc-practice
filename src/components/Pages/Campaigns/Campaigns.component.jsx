@@ -11,7 +11,7 @@ const Campaigns = () => {
     <>
       <div className="card">
         <div className="top">
-          <h1>Campaigns</h1>
+          <h1 className="page-title">Campaigns</h1>
           <a className="button" href="/discover">Create New Campaign</a>
         </div>
         <img src={campaigns} alt="campaigns"></img>
