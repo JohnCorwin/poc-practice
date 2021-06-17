@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import DataTable from 'react-data-table-component';
+import './applicantRoster.scss';
 
 const ApplicantRoster = () => {
   const columns = [
-    { name: 'Name',
-      selector: 'name',
+    { name: 'Student',
+      cell: row => <div className="student">
+                     <div className="student-name">{row.name}</div>
+                     <div className="student-name">{row.location}</div>
+                     <div className="student-name">{row.email}</div>
+                   </div>,
       sortable: true
     },
     { name: 'Status',
@@ -63,6 +68,8 @@ const ApplicantRoster = () => {
   const xiaoHu = {
     id: 1,
     name: 'Xiao Hu',
+    location: 'Shanghai, China',
+    email: 'xiao.hu@uni.edu',
     status: 'Follow Up',
     gpa: '3.3',
     ielts: '8',
@@ -76,6 +83,8 @@ const ApplicantRoster = () => {
   const zhuanCheng = {
     id: 2,
     name: 'Zhuan Cheng',
+    location: 'Shanghai, China',
+    email: 'xiao.hu@uni.edu',
     status: 'Follow Up',
     gpa: '3.2',
     ielts: '7',
