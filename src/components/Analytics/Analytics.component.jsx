@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Tableau from 'tableau-api';
 import './Analytics.css';
 
 const { tableau } = window;
