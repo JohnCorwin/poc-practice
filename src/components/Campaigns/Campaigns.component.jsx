@@ -1,18 +1,25 @@
-import './Campaigns.css';
 import React from "react";
+
+import campaigns from "../../assets/images/campaigns.svg";
+import tasks from "../../assets/images/tasks.svg";
+
+import "../../css/baseline/project.scss";
+import "../../css/baseline/reset.scss";
 
 const Campaigns = () => {
   return (
-    <div className="content-div">
-      <div className="content-div-box">
-        <div className="campaigns-div">
-          <div className="campaigns-div-header">
-            <h2 className="campaigns-title">Campaigns</h2>
-            <button className="create-new-campaign-button">Create New Campaign</button>
-          </div>
+    <>
+      <div className="card">
+        <div className="top">
+          <h1>Campaigns</h1>
+          <a className="button" href="/discover">Create New Campaign</a>
         </div>
+        <img src={campaigns}></img>
       </div>
-    </div>
+      <div className="card side">
+        <img src={tasks}></img>
+      </div>
+    </>
   );
 }
 

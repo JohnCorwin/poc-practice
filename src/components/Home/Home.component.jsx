@@ -1,18 +1,20 @@
 import * as React from "react";
 
-import logo from "../../assets/images/logo.svg";
-import search from "../../assets/images/search.svg";
-import icons from "../../assets/images/icons.svg";
+import SideNav from '../SideNav/SideNav.component';
+import Content from '../Content/Content.component';
 
 import "../../css/components/home.scss";
 
 const Home = () => {
+  var href = window.location.href
+
+  var page = href.length > 22 ? href.substring(22) : "home";
+
   return (
-    <main className="home">
-      <img src={logo}></img>
-      <img src={search}></img>
-      <img src={icons}></img>
-    </section>
+    <main className={page}>
+      <SideNav />
+      <Content />
+    </main>
   )
 }
 
