@@ -1,0 +1,13 @@
+section.top-nav {
+	height: 60px;
+	width: 100vw;
+	background-color: #5c5c61;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 50px;
+	padding-left: 50px;
+
+	img {
+		align-self: center;
+	}
+}

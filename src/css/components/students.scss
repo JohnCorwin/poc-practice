@@ -1,0 +1,72 @@
+.students {
+
+	section.primary .card {
+		margin-top: 40px;
+		padding: 0px;
+
+		.tabs {
+			display: flex;
+			background-color: #DFE3E6;
+
+			.tab {
+				padding-left: 24px;
+				padding-right: 24px;
+				padding-top: 24px;
+				padding-bottom: 24px;
+				text-align: center;
+				border-right: 1px solid grey;
+				min-width: 200px;
+				cursor: pointer;
+				transition: background-color .3s;
+
+				h2 {
+					font-family: Meriweather;
+					font-size: 18px;
+					color: #252525;
+					margin-bottom: 12px;
+				}
+
+				.metric {
+					font-weight: 300;
+					font-size: 48px;
+					margin-bottom: 12px;
+				}
+
+				.trend {
+
+					img {
+						position: relative;
+						top: 4px;
+						margin-right: 3px;
+					}
+
+					span {
+						font-weight: bold;
+						font-size: 18px;
+					}
+				}
+
+				&.is-selected {
+					background-color: white;
+				}
+
+				&:hover {
+					background-color: white;
+				}
+			}
+		}
+
+		.details {
+			padding: 24px;
+
+			img {
+				display: none;
+				width: 100%;
+
+				&.is-showing {
+					display: block;
+				}
+			}
+		}
+	}
+}

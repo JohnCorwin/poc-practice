@@ -8,6 +8,7 @@ const Analytics = () => {
   const [url, setUrl] = useState(
     "https://public.tableau.com/views/RegionalSampleWorkbook/Storms"
   );
+
   const ref = useRef(null);
 
   const initViz = () => {

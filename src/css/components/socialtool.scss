@@ -1,0 +1,34 @@
+main.socialtool {
+
+	hr {
+		margin-top: 8px;
+		margin-bottom: 16px;
+	}
+
+	input[type=text] {
+		min-width: 190px;
+		margin-right: 0px;
+	}
+
+	.button.save {
+		margin-top: 20px;
+	}
+
+	.cards {
+		display: flex;
+		margin-top: 40px;
+
+		.card {
+			max-width: 66%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.card:last-child {
+			margin-left: 2%;
+			max-width: 30%;
+		}
+	}
+}

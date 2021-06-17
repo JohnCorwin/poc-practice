@@ -107,17 +107,29 @@ const ApplicantRoster = () => {
     return null;
   }
 
+  const getClassName = (value) => {
+    return (table === value) ? "tab is-selected" : "tab";
+  }
+
   return (
-    <div className="applicant-roster-div">
-      <div className="applicant-roster-box">
-        <div className="applicant-roster-div">
-          <div className="applicant-roster-top-buttons">
-            <button onClick={() => setTable('Applied')}className="applied-button">Applied</button>
-            <button onClick={() => setTable('Waitlisted')} className="wait-list-button">Wait List</button>
-            <button onClick={() => setTable('Admissable')} className="qualified-admissible-button">Qualified/Admissable</button>
-          </div>
+    <div className="card">
+      <div className="tabs">
+        <div className={getClassName("Applied")} onClick={ () => setTable("Applied")}>
+          <h2>Applied</h2>
+          <div className="metric">{dataApplied.length}</div>
+        </div>
+        <div className={getClassName("Waitlisted")} onClick={ () => setTable("Waitlisted")}>
+          <h2>Wait List</h2>
+          <div className="metric">{dataWaitlisted.length}</div>
+        </div>
+        <div className={getClassName("Admissable")} onClick={ () => setTable("Admissable")}>
+          <h2>Qualified/Admissable</h2>
+          <div className="metric">{dataAdmissable.length}</div>
+        </div>
+      </div>
+      <div className="tab-details">
+        <div className="details">
           <DataTable
-            title="Applicant Roster"
             columns={columns}
             customStyles={customStyles}
             data={getData()}

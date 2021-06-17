@@ -1,0 +1,143 @@
+body, html {
+	height: 100%;
+	font-family: 'Rubik', sans-serif;
+	background-color: #f3f2ee;
+	overflow-x: hidden;
+	max-width: 100vw;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-family: 'Merriweather', serif;
+	font-weight: 300;
+	font-size: 36px;
+	color: #252525;
+	margin-bottom: 8px;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+main {
+	display: flex;
+}
+
+section.primary {
+	width: calc(100vw - 150px);
+	display: flex;
+	justify-content: space-between;
+
+	.card {
+		background-color: white;
+		border-radius: 4px;
+		padding: 24px;
+		box-shadow: 0px 0px 4px 0px rgb(155, 155, 155);
+	}
+
+	.button {
+		background-color: #ea7201;
+		color: white;
+		font-size: 16px;
+		padding: 15px;
+		padding-left: 20px;
+		padding-right: 20px;
+		transition: background-color .3s;
+		cursor: pointer;
+		display: inline-block;
+		border-radius: 4px;
+
+		&:hover {
+			background-color: darken(#ea7201, 10%);
+		}
+	}
+
+	.stuff {
+		padding: 40px;
+		width: 100%;
+	}
+}
+
+section.filters {
+	width: 300px;
+	background-color: #dee2e6;
+	min-height: calc(100vh - 60px);
+	padding-top: 24px;
+	padding-right: 12px;
+	padding-left: 12px;
+	box-shadow: 2px 0px 5px 0px rgba(142,142,142,0.75);
+}
+
+label {
+	font-weight: 300;
+	font-size: 12px;
+	display: block;
+	margin-bottom: 4px;
+	margin-top: 24px;
+
+	&:first-of-type {
+		margin-top: 0px;
+	}
+}
+
+select {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px;
+	border-radius: 4px;
+	width: 100%;
+	margin-bottom: 12px;
+	border: solid 1px #a5a5a5;
+
+	&:last-of-type {
+		margin-bottom: 24px;
+	}
+
+	&+label {
+		margin-top: 0px;
+	}
+}
+
+.button.save {
+	margin-top: 20px;
+}
+
+.checkbox {
+	display: flex;
+	margin-bottom: 8px;
+	margin-top: 8px;
+
+	input[type=checkbox] {
+		width: 16px;
+		height: 16px;
+	}
+
+	span {
+		margin-left: 8px;
+	}
+}
+
+
+input[type=date] {
+	font-family: 'Rubik';
+	font-size: 14px;
+	padding: 5px;
+	border-radius: 4px;
+	margin-right: 10px;
+	border: solid 1px #a5a5a5;
+	margin-bottom: 8px;
+}
+
+input[type=text] {
+	font-family: 'Rubik';
+	padding: 5px;
+	border-radius: 4px;
+	max-width: 130px;
+	margin-right: 10px;
+	border: solid 1px #a5a5a5;
+	font-weight: bold;
+    font-size: 16px;
+}
