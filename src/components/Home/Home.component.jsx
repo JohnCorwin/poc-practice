@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import SideNav from '../SideNav/SideNav.component';
-import Content from '../Content/Content.component';
+import ContentRouter from '../ContentRouter/ContentRouter.component';
 
 import "../../css/components/home.scss";
 
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <main className={page}>
       <SideNav />
-      <Content />
+      <ContentRouter />
     </main>
   )
 }
