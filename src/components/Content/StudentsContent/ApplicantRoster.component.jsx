@@ -3,13 +3,19 @@ import DataTable from 'react-data-table-component';
 import './applicantRoster.scss';
 
 const ApplicantRoster = () => {
+  const studentCell = (data) => {
+    return (
+      <div className="student">
+        <div className="student-name">{data.name}</div>
+        <div className="student-name">{data.location}</div>
+        <div className="student-name">{data.email}</div>
+      </div>
+    );
+  }
+
   const columns = [
     { name: 'Student',
-      cell: row => <div className="student">
-                     <div className="student-name">{row.name}</div>
-                     <div className="student-name">{row.location}</div>
-                     <div className="student-name">{row.email}</div>
-                   </div>,
+      cell: row => studentCell(row),
       sortable: true
     },
     { name: 'Status',
