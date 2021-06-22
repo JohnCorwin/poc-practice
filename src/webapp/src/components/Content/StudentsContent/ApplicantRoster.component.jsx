@@ -15,8 +15,8 @@ const ApplicantRoster = () => {
     return (
       <div className="student">
         <div className="student-name">{data.name}</div>
-        <div className="student-name">{data.location}</div>
-        <div className="student-name">{data.email}</div>
+        <div className="student-location">{data.location}</div>
+        <div className="student-email">{data.email}</div>
       </div>
     );
   }
