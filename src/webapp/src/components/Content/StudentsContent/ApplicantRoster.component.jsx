@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import DataTable from 'react-data-table-component';
+import Loader from '../../Loader/Loader.component';
 import { fetchStudents, updateStudents } from '../../../actions/studentsActions.js'
 
 import './applicantRoster.scss';
 
 const ApplicantRoster = () => {
   const [table, setTable] = useState('Applied');
-  const [students, setStudents] = useState([]);
+  const students = useSelector(state => state.students.students);
+  const loading = useSelector(state => state.students.loading);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchStudents())
+  }, [])
 
   const studentCell = (data) => {
     return (
@@ -20,15 +26,6 @@ const ApplicantRoster = () => {
       </div>
     );
   }
-
-  useEffect(() => {
-    fetch('http://localhost:8081/api/students/list')
-        .then(response => response.json())
-        .then(data => setStudents(data))
-        .catch(error => {
-          console.error("What?!? An Error?!?")
-        });
-  }, [])
 
   const columns = [
     { name: 'Student',
@@ -89,15 +86,21 @@ const ApplicantRoster = () => {
   };
 
   const getDataApplied = () => {
-    return students;
+    return students ?? [];
   }
 
   const getDataWaitlisted = () => {
-    return students.filter(student => student.sat < 1400)
+    if (students && students.length > 0) {
+      return students.filter(student => student.sat < 1400)
+    }
+    return [];
   }
 
   const getDataAdmissable = () => {
-    return students.filter(student => student.sat > 1400)
+    if (students && students.length > 0) {
+      return students.filter(student => student.sat > 1400)
+    }
+    return [];
   }
 
   const dataApplied = getDataApplied();
@@ -122,8 +125,7 @@ const ApplicantRoster = () => {
     return (table === value) ? "tab is-selected" : "tab";
   }
 
-  return (
-    <div className="card">
+  return (<div className="card">
       <div className="tabs">
         <div className={getClassName("Applied")} onClick={ () => setTable("Applied")}>
           <h2>Applied</h2>
@@ -141,6 +143,7 @@ const ApplicantRoster = () => {
       <div className="tab-details">
         <div className="details">
           <DataTable
+            noHeader={true}
             columns={columns}
             customStyles={customStyles}
             data={getData()}
