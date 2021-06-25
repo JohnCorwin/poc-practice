@@ -14,26 +14,6 @@ const EnrollmentContent = () => {
   const [ieltsMin, setIeltsMin] = useState(3);
   const [ieltsMax, setIeltsMax] = useState(6);
 
-  const handleLeftValue = (leftValue, rightValue, maxValue, fun) => {
-    var intValue = parseInt(leftValue);
-    var newLeftValue = (leftValue >= rightValue) ? parseInt(rightValue) - 1 : intValue;
-    fun(newLeftValue);
-  }
-
-  const handleRightValue = (rightValue, leftValue, maxValue, fun) => {
-    var intValue = parseInt(rightValue);
-    var newRightValue = (rightValue <= leftValue) ? parseInt(leftValue) + 1 : intValue;
-    fun(newRightValue);
-  }
-
-  const getMultiStyles = (leftValue, rightValue, maxValue) => {
-    var leftPercent = (leftValue / maxValue) * 100;
-
-    return {
-      background: "linear-gradient(90deg, red "+leftPercent+"%, #01BB15 "+leftPercent+"%)"
-    }
-  }
-
   return (
     <div className="stuff">
       <h1 className="page-title">Enrollment Criteria</h1>
