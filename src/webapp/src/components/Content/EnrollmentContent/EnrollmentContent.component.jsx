@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Slider from "../../Common/Slider/Slider.component";
+import MultiRange from "../../Common/MultiRange/MultiRange.component";
 
 const EnrollmentContent = () => {
   const [availableSeats, setAvailableSeats] = useState(2500);
@@ -12,8 +13,6 @@ const EnrollmentContent = () => {
   const [toeflMax, setToeflMax] = useState(80);
   const [ieltsMin, setIeltsMin] = useState(3);
   const [ieltsMax, setIeltsMax] = useState(6);
-  const [recommendationLetters, setRecommendationLetters] = useState(true);
-
 
   const handleLeftValue = (leftValue, rightValue, maxValue, fun) => {
     var intValue = parseInt(leftValue);
@@ -25,16 +24,6 @@ const EnrollmentContent = () => {
     var intValue = parseInt(rightValue);
     var newRightValue = (rightValue <= leftValue) ? parseInt(leftValue) + 1 : intValue;
     fun(newRightValue);
-  }
-
-  const getStyles = (value, maxValue) => {
-    var remainingPercent = (value / maxValue) * 100;
-    var usedPercent = 100 - remainingPercent;
-
-    return {
-      right: usedPercent+"%",
-      left: "0%",
-    }
   }
 
   const getMultiStyles = (leftValue, rightValue, maxValue) => {
@@ -158,38 +147,11 @@ const EnrollmentContent = () => {
           <h5>China LER</h5>
           <Slider min={0} max={100} value={chinaLer} onChange={setChinaLer} sign={"percent"} />
           <h5>SAT Score</h5>
-          <span className="multirange multi">
-            <input className="range" type="range" min="0" max="1600" value={satMin} onChange={e => handleLeftValue(e.target.value, satMax, 1600, setSatMin)}></input>
-            <input className="range" type="range" min="0" max="1600" value={satMax} onChange={e => handleRightValue(e.target.value, satMin, 1600, setSatMax)}></input>
-            <span className="bar" style={getMultiStyles(satMin, satMax, 1600)}></span>
-          </span>
-          <div className="values">
-            <input type="text" value={satMin}></input>
-            <input type="text" value={satMax}></input>
-            <div className="max">1600</div>
-          </div>
+          <MultiRange min={0} max={1600} leftValue={satMin} rightValue={satMax} leftFunction={setSatMin} rightFunction={setSatMax} />
           <h5>Toefl Score</h5>
-          <span className="multirange multi">
-            <input className="range" type="range" min="0" max="120" value={toeflMin} onChange={e => handleLeftValue(e.target.value, toeflMax, 120, setToeflMin)}></input>
-            <input className="range" type="range" min="0" max="120" value={toeflMax} onChange={e => handleRightValue(e.target.value, toeflMin, 120, setToeflMax)}></input>
-            <span className="bar" style={getMultiStyles(toeflMin, toeflMax, 120)}></span>
-          </span>
-          <div className="values">
-            <input type="text" value={toeflMin}></input>
-            <input type="text" value={toeflMax}></input>
-            <div className="max">120</div>
-          </div>
+          <MultiRange min={0} max={120} leftValue={toeflMin} rightValue={toeflMax} leftFunction={setToeflMin} rightFunction={setToeflMax} />
           <h5>IELTS Score</h5>
-          <span className="multirange multi">
-            <input className="range" type="range" min="0" max="9" value={ieltsMin} onChange={e => handleLeftValue(e.target.value, ieltsMax, 9, setIeltsMin)}></input>
-            <input className="range" type="range" min="0" max="9" value={ieltsMax} onChange={e => handleRightValue(e.target.value, ieltsMin, 9, setIeltsMax)}></input>
-            <span className="bar" style={getMultiStyles(ieltsMin, ieltsMax, 9)}></span>
-          </span>
-          <div className="values">
-            <input type="text" value={ieltsMin}></input>
-            <input type="text" value={ieltsMax}></input>
-            <div className="max">9</div>
-          </div>
+          <MultiRange min={0} max={9} leftValue={ieltsMin} rightValue={ieltsMax} leftFunction={setIeltsMin} rightFunction={setIeltsMax} />
           <h5>ACADEMIC RECOMMENDATION LETTERS?</h5>
             <div className="yesno">
               <span className="no">No</span>

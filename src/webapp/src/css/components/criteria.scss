@@ -315,14 +315,3 @@
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
-
-.multirange.multi:before{
-	content: '';
-	position: absolute;
-	left: 0.5rem;
-	right: 0.5rem;
-	top:0;
-	bottom:0;
-	border-radius: 0.5rem;
-	background: linear-gradient(90deg, red 60%, #01BB15 60%);
-}
