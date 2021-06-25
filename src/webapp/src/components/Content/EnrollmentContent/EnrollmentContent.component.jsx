@@ -1,18 +1,73 @@
-import React, { useState } from "react";
+import React from "react";
+import {useSelector, useDispatch} from 'react-redux';
 import Slider from "../../Common/Slider/Slider.component";
 import MultiRange from "../../Common/MultiRange/MultiRange.component";
+import {
+  updateAvailableSeats,
+  updateCostOfAttendance,
+  updateScholarshipRecommendation,
+  updateChinaLer,
+  updateSatMin,
+  updateSatMax,
+  updateToeflMin,
+  updateToeflMax,
+  updateIeltsMin,
+  updateIeltsMax
+} from '../../../actions/criteriaActions.js'
 
 const EnrollmentContent = () => {
-  const [availableSeats, setAvailableSeats] = useState(2500);
-  const [costOfAttendance, setCostOfAttendance] = useState(30000);
-  const [scholarshipRecommendation, setScholarshipRecommendation] = useState(3000);
-  const [chinaLer, setChinaLer] = useState(80);
-  const [satMin, setSatMin] = useState(600);
-  const [satMax, setSatMax] = useState(1200);
-  const [toeflMin, setToeflMin] = useState(40);
-  const [toeflMax, setToeflMax] = useState(80);
-  const [ieltsMin, setIeltsMin] = useState(3);
-  const [ieltsMax, setIeltsMax] = useState(6);
+  const availableSeats = useSelector(state => state.criteria.availableSeats);
+  const costOfAttendance = useSelector(state => state.criteria.costOfAttendance);
+  const scholarshipRecommendation = useSelector(state => state.criteria.scholarshipRecommendation);
+  const chinaLer = useSelector(state => state.criteria.chinaLer);
+  const satMin = useSelector(state => state.criteria.satMin);
+  const satMax = useSelector(state => state.criteria.satMax);
+  const toeflMin = useSelector(state => state.criteria.toeflMin);
+  const toeflMax = useSelector(state => state.criteria.toeflMax);
+  const ieltsMin = useSelector(state => state.criteria.ieltsMin);
+  const ieltsMax = useSelector(state => state.criteria.ieltsMax);
+
+  const dispatch = useDispatch();
+
+  const handleAvailableSeats = (value) => {
+    dispatch(updateAvailableSeats(value));
+  }
+
+  const handleCostOfAttendance = (value) => {
+    dispatch(updateCostOfAttendance(value));
+  }
+
+  const handleScholarshipRecommendation = (value) => {
+    dispatch(updateScholarshipRecommendation(value));
+  }
+
+  const handleChinaLer = (value) => {
+    dispatch(updateChinaLer(value));
+  }
+
+  const handleSatMin = (value) => {
+    dispatch(updateSatMin(value));
+  }
+
+  const handleSatMax = (value) => {
+    dispatch(updateSatMax(value));
+  }
+
+  const handleToeflMin = (value) => {
+    dispatch(updateToeflMin(value));
+  }
+
+  const handleToeflMax = (value) => {
+    dispatch(updateToeflMax(value));
+  }
+
+  const handleIeltsMin = (value) => {
+    dispatch(updateIeltsMin(value));
+  }
+
+  const handleIeltsMax = (value) => {
+    dispatch(updateIeltsMax(value));
+  }
 
   return (
     <div className="stuff">
@@ -71,11 +126,11 @@ const EnrollmentContent = () => {
             </div>
           </div>
           <h5>Available Seats</h5>
-          <Slider min={0} max={5000} value={availableSeats} onChange={setAvailableSeats} />
+          <Slider min={0} max={5000} value={availableSeats} onChange={handleAvailableSeats} />
           <h5>Cost of Attendance</h5>
-          <Slider min={0} max={60000} value={costOfAttendance} onChange={setCostOfAttendance} sign={"dollar"} />
+          <Slider min={0} max={60000} value={costOfAttendance} onChange={handleCostOfAttendance} sign={"dollar"} />
           <h5>Scholarship Recommendation</h5>
-          <Slider min={0} max={10000} value={scholarshipRecommendation} onChange={setScholarshipRecommendation} sign={"dollar"} />
+          <Slider min={0} max={10000} value={scholarshipRecommendation} onChange={handleScholarshipRecommendation} sign={"dollar"} />
           <h5>Payment Deadline</h5>
             <div className="inputs">
               <div className="input dates">
@@ -125,13 +180,13 @@ const EnrollmentContent = () => {
             <span>ACT</span>
           </div>
           <h5>China LER</h5>
-          <Slider min={0} max={100} value={chinaLer} onChange={setChinaLer} sign={"percent"} />
+          <Slider min={0} max={100} value={chinaLer} onChange={handleChinaLer} sign={"percent"} />
           <h5>SAT Score</h5>
-          <MultiRange min={0} max={1600} leftValue={satMin} rightValue={satMax} leftFunction={setSatMin} rightFunction={setSatMax} />
+          <MultiRange min={0} max={1600} leftValue={satMin} rightValue={satMax} leftFunction={handleSatMin} rightFunction={handleSatMax} />
           <h5>Toefl Score</h5>
-          <MultiRange min={0} max={120} leftValue={toeflMin} rightValue={toeflMax} leftFunction={setToeflMin} rightFunction={setToeflMax} />
+          <MultiRange min={0} max={120} leftValue={toeflMin} rightValue={toeflMax} leftFunction={handleToeflMin} rightFunction={handleToeflMax} />
           <h5>IELTS Score</h5>
-          <MultiRange min={0} max={9} leftValue={ieltsMin} rightValue={ieltsMax} leftFunction={setIeltsMin} rightFunction={setIeltsMax} />
+          <MultiRange min={0} max={9} leftValue={ieltsMin} rightValue={ieltsMax} leftFunction={handleIeltsMin} rightFunction={handleIeltsMax} />
           <h5>ACADEMIC RECOMMENDATION LETTERS?</h5>
             <div className="yesno">
               <span className="no">No</span>
