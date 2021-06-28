@@ -1,12 +1,12 @@
 .campaigns-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33.3% 33.3% 33.3%;
   font-size: 0.6em;
 }
 
 .campaign {
   display:grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid rgba(0, 0, 0, 0.8);
   border-radius: 10%;
@@ -15,7 +15,7 @@
 
 .campaign-tile-grid {
   display: block;
-
+  width: 100%;
 }
 
 .campaign-country {

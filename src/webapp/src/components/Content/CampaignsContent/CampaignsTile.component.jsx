@@ -7,7 +7,7 @@ const CampaignsTile = (props) => {
   return (<>
     <div className="campaign">
       <div className="campaign-tile-grid">
-        <div className="campaign-country">China</div>
+        <div className="campaign-country">{ props.campaign.country ?? "N/A" }</div>
       </div>
       <div className="campaign-tile-grid">
         <div className="campaign-openings">{ props.campaign.openings ?? 0 } openings</div>
