@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+
+import { fetchCampaigns, updateCampaigns } from "../../../actions/campaignsActions";
 
 import CampaignsTile from "./CampaignsTile.component";
 
-import campaigns from "../../../assets/images/campaigns.svg";
+import campaignsLogo from "../../../assets/images/campaigns.svg";
 
 import "./campaigns.scss";
 
 const CampaignsCard = () => {
+  const campaigns = useSelector(state => state.campaigns.campaigns);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCampaigns())
+  }, [])
+
   return (<>
     <div className="card">
       <div className="top">
@@ -14,11 +25,11 @@ const CampaignsCard = () => {
         <a className="button" href="/discover">Create New Campaign</a>
       </div>
       <div className="campaigns-grid">
-        <CampaignsTile />
-        <CampaignsTile />
-        <CampaignsTile />
+        { campaigns.map((campaign, i) => {
+          return <CampaignsTile campaign={campaign} key={i} />
+        })}
       </div>
-      <img src={campaigns} alt="campaigns"></img>
+      <img src={campaignsLogo} alt="campaigns"></img>
     </div>
   </>);
 }
